@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Input Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Let's send a mail</h1>
+
+    <div class="form">
+        <form action="/send" method="POST">
+             <input type="text" name="sendermail" id="sendermail" placeholder="sender mail">
+             <input type="text" name="senderpassword" id="senderpassword" placeholder="sender mail password">
+             <br>
+            <input type="text" name="receivermail" id="receivermail" placeholder="receiver mail">
+            <input type="text" size="53" name="body" id="body" placeholder="Type the message">
+
+            <input type="submit" value="send it">
+        </form>
+    </div>
+</div>
+{% endblock %}
